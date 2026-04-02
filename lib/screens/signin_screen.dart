@@ -33,7 +33,7 @@ class _SignInScreenState extends State<SignInScreen> {
                   top: 50,
                   left: 20,
                   child: IconButton(
-                    onPressed: () => Navigator.pop(context),
+                    onPressed: () => Navigator.pushReplacementNamed(context,'/onboarding_screen'),
                     icon: const Icon(
                       Icons.arrow_back,
                       size: 30,
@@ -45,17 +45,14 @@ class _SignInScreenState extends State<SignInScreen> {
               ],
             ),
           ),
-          Expanded(
+          ClipRRect(
+            borderRadius: const BorderRadius.only(
+              topLeft: Radius.circular(20),
+              topRight: Radius.circular(20),
+            ),
             child: Container(
               width: double.infinity,
-              decoration: const BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(20),
-                  topRight: Radius.circular(20),
-                ),
-              ),
-              clipBehavior: Clip.hardEdge,
+              color: Colors.white,
               child: SingleChildScrollView(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -105,18 +102,18 @@ class _SignInScreenState extends State<SignInScreen> {
                           controller: emailController,
                           keyboardType: TextInputType.emailAddress,
                           decoration: InputDecoration(
-                            hintText: 'rafatul3588@gmail.com',
+                            hintText: 'example@gmail.com',
                             hintStyle: const TextStyle(
                               fontSize: 16,
                               color: Colors.grey,
                             ),
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(30),
-                              borderSide: BorderSide(color: Colors.grey[300]!),
+                              borderSide: BorderSide(color: Color(0xFFFEC54B)),
                             ),
                             enabledBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(30),
-                              borderSide: BorderSide(color: Colors.grey[300]!),
+                              borderSide: BorderSide(color: Color(0xFFFEC54B)),
                             ),
                             focusedBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(30),
@@ -149,11 +146,11 @@ class _SignInScreenState extends State<SignInScreen> {
                             ),
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(30),
-                              borderSide: BorderSide(color: Colors.grey[300]!),
+                              borderSide: BorderSide(color: Color(0xFFFEC54B)),
                             ),
                             enabledBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(30),
-                              borderSide: BorderSide(color: Colors.grey[300]!),
+                              borderSide: BorderSide(color: Color(0xFFFEC54B)),
                             ),
                             focusedBorder: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(30),
@@ -183,7 +180,7 @@ class _SignInScreenState extends State<SignInScreen> {
                         ),
                       ),
                     ),
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 42),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 28),
                       child: SizedBox(
@@ -207,7 +204,7 @@ class _SignInScreenState extends State<SignInScreen> {
                             style: TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
-                              color: Colors.white,
+                              color: Colors.black,
                             ),
                           ),
                         ),

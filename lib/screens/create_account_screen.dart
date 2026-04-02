@@ -19,7 +19,6 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
       backgroundColor: Colors.white,
       body: Column(
         children: [
-          // النصف العلوي: صورة
           Expanded(
             flex: 1,
             child: Stack(
@@ -33,7 +32,6 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                     ),
                   ),
                 ),
-                // زر الرجوع
                 Positioned(
                   top: 50,
                   left: 20,
@@ -50,7 +48,6 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
               ],
             ),
           ),
-          // الجزء السفلي: محتوى (بطول العناصر)
           ClipRRect(
             borderRadius: const BorderRadius.only(
               topLeft: Radius.circular(20),
@@ -64,7 +61,6 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     const SizedBox(height: 30),
-                    // صف عنوان Create your account وزر الإغلاق
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 28),
                       child: Row(
@@ -96,12 +92,10 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                       ),
                     ),
                     const SizedBox(height: 50),
-                    // صف الحقلين الأولين (First Name & Last Name)
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 28),
                       child: Row(
                         children: [
-                          // حقل First Name
                           Expanded(
                             child: SizedBox(
                               height: 45,
@@ -128,7 +122,6 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                             ),
                           ),
                           const SizedBox(width: 19),
-                          // حقل Last Name
                           Expanded(
                             child: SizedBox(
                               height: 45,
@@ -158,7 +151,6 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                       ),
                     ),
                     const SizedBox(height: 16),
-                    // حقل الإيميل
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 28),
                       child: SizedBox(
@@ -188,7 +180,6 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                       ),
                     ),
                     const SizedBox(height: 13),
-                    // حقل كلمة المرور
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 28),
                       child: SizedBox(
@@ -218,7 +209,6 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                       ),
                     ),
                     const SizedBox(height: 10),
-                    // نص الشروط
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 28),
                       child: RichText(
@@ -250,7 +240,6 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                       ),
                     ),
                     const SizedBox(height: 23),
-                    // زر CREATE AN ACCOUNT
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 28),
                       child: SizedBox(

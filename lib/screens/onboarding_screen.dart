@@ -11,18 +11,16 @@ class OnboardingScreen extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 24),
         child: Column(
           children: [
-            const SizedBox(height: 130), // المسافة من الأعلى
-            // الصورة
+            const SizedBox(height: 130),
             Center(
               child: Image.asset(
-                'assets/images/img_onboarding.png', // ضع الصورة بهذا الاسم
+                'assets/images/img_onboarding.png',
                 width: 303,
                 height: 180,
                 fit: BoxFit.contain,
               ),
             ),
             const SizedBox(height: 130),
-            // النص الرئيسي
             const Text(
               'Fast and responsibly delivery by our courier',
               textAlign: TextAlign.center,
@@ -33,7 +31,6 @@ class OnboardingScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 16),
-            // النص الثانوي
             const Text(
               'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor',
               textAlign: TextAlign.center,
@@ -42,14 +39,13 @@ class OnboardingScreen extends StatelessWidget {
                 color: Colors.grey,
               ),
             ),
-            const Spacer(), // يدفع الأزرار للأسفل
-            // زر CREATE AN ACCOUNT
+            const Spacer(),
             SizedBox(
               width: double.infinity,
               height: 60,
               child: ElevatedButton(
                 onPressed: () {
-                  Navigator.pushReplacementNamed(context, '/signin_screen');
+                  Navigator.pushReplacementNamed(context, '/create_account_screen');
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xFFFEC54B),
@@ -68,13 +64,12 @@ class OnboardingScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 18),
-            // زر LOGIN
             SizedBox(
               width: double.infinity,
               height: 60,
               child: OutlinedButton(
                 onPressed: () {
-                  Navigator.pushReplacementNamed(context, '/login_screen');
+                  Navigator.pushReplacementNamed(context, '/sign_in_screen');
                 },
                 style: OutlinedButton.styleFrom(
                   side: const BorderSide(color: Color(0xFFFEC54B)),
@@ -83,7 +78,7 @@ class OnboardingScreen extends StatelessWidget {
                   ),
                 ),
                 child: const Text(
-                  'LOGIN',
+                  'SIGN IN',
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,

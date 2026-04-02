@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:fresh_fruits/screens/login_screen.dart';
-import 'package:fresh_fruits/screens/onboarding_screen.dart';
+import 'package:fresh_fruits/screens/main_screen.dart';
 import 'package:fresh_fruits/screens/signin_screen.dart';
+import 'package:fresh_fruits/screens/onboarding_screen.dart';
+import 'package:fresh_fruits/screens/create_account_screen.dart';
 import 'package:fresh_fruits/screens/splash_screen.dart';
 
 void main() {
@@ -20,8 +21,9 @@ class FreshFruiteApp extends StatelessWidget {
       routes: {
         '/splash_screen': (context) => const SplashScreen(),
         '/onboarding_screen': (context) => const OnboardingScreen(),
-        '/login_screen': (context) => const LoginScreen(),
-        '/signin_screen': (context) => const SigninScreen(),
+        '/sign_in_screen': (context) => const SignInScreen(),
+        '/create_account_screen': (context) => const CreateAccountScreen(),
+        '/main_screen': (context) => const MainScreen(),
       },
       debugShowCheckedModeBanner: false,
     );

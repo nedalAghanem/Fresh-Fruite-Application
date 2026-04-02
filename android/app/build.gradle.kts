@@ -8,7 +8,7 @@ plugins {
 android {
     namespace = "com.example.fresh_fruits"
     compileSdk = flutter.compileSdkVersion
-    ndkVersion = "26.3.11579264"
+    ndkVersion = "27.3.13750724"
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11

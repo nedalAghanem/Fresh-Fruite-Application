@@ -19,74 +19,123 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Text(
+                    children: const [
+                      Text(
                         'Good Morning',
                         style: TextStyle(fontSize: 14, color: Colors.grey),
                       ),
-                      const SizedBox(height: 4),
-                      const Text(
-                        'User Name',
+                      SizedBox(height: 4),
+                      Text(
+                        'Nedal AbuGhanem',
                         style: TextStyle(
-                          fontSize: 20,
+                          fontSize: 22,
                           fontWeight: FontWeight.bold,
                           color: Colors.black,
                         ),
                       ),
                     ],
                   ),
-                  Container(
-                    decoration: const BoxDecoration(
-                      color: Colors.white,
-                      shape: BoxShape.circle,
-                    ),
-                    child: IconButton(
-                      onPressed: () {},
-                      // icon: const Icon(Icons.notifications_none),
-                      icon: SvgPicture.asset('assets/images/ic_notification.svg'),
-                      color: Colors.black,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            const SizedBox(height: 24),
-            Padding(
-              padding: const EdgeInsets.only(left: 16),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-
-                  SizedBox(
-                    height: 162,
-                    child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: 3,
-                      itemBuilder: (context, index) {
-                        final images = [
-                          'assets/images/home_top1.png',
-                          'assets/images/home_top1.png',
-                          'assets/images/home_top1.png',
-                        ];
-
-                        return Container(
-                          width: 263,
-                          margin: const EdgeInsets.only(right: 12),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(12),
-                            child: Image.asset(
-                              images[index],
-                              fit: BoxFit.cover,
+                  Stack(
+                    children: [
+                      Container(
+                        decoration: const BoxDecoration(
+                          color: Colors.white,
+                          shape: BoxShape.circle,
+                        ),
+                        child: IconButton(
+                          onPressed: () {},
+                          icon: SvgPicture.asset(
+                            'assets/images/ic_notification.svg',
+                            width: 24,
+                            height:              24,
+                            colorFilter: const ColorFilter.mode(
+                              Colors.black87,
+                              BlendMode.srcIn,
                             ),
                           ),
-                        );
-                      },
-                    ),
+                        ),
+                      ),
+                      // Orange dot badge
+                      Positioned(
+                        top: 8,
+                        right: 8,
+                        child: Container(
+                          width: 10,
+                          height: 10,
+                          decoration: const BoxDecoration(
+                            color: Color(0xFFFEC54B),
+                            shape: BoxShape.circle,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
             ),
+
             const SizedBox(height: 24),
+
+            SizedBox(
+              height: 180,
+              child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                itemCount: 3,
+                itemBuilder: (context, index) {
+                  final labels = [
+                    'Recomended\nRecipe Today',
+                    'Fresh\nDelivery',
+                    'Special\nOffers',
+                  ];
+                  final images = [
+                    'assets/images/home_top1.png',
+                    'assets/images/home_top1.png',
+                    'assets/images/home_top1.png',
+                  ];
+
+                  return Container(
+                    width: 280,
+                    margin: const EdgeInsets.only(right: 12),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(16),
+                      child: Stack(
+                        fit: StackFit.expand,
+                        children: [
+                          Image.asset(images[index], fit: BoxFit.cover),
+                          Container(
+                            decoration: const BoxDecoration(
+                              gradient: LinearGradient(
+                                begin: Alignment.topCenter,
+                                end: Alignment.bottomCenter,
+                                colors: [Colors.transparent, Colors.black54],
+                              ),
+                            ),
+                          ),
+                          // Label text
+                          Positioned(
+                            bottom: 16,
+                            left: 16,
+                            child: Text(
+                              labels[index],
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                                height: 1.3,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ),
+
+            const SizedBox(height: 24),
+
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Row(
@@ -96,49 +145,61 @@ class HomeScreen extends StatelessWidget {
                     'Categories',
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
-                  Row(
-                    children: [
-                      const Text(
-                        'See All',
-                        style: TextStyle(fontSize: 14, color: Color(0xFFFEC54B)),
-                      ),
-                      const SizedBox(width: 4),
-                      const Icon(Icons.arrow_forward_ios, size: 14, color: Color(0xFFFEC54B)),
-                    ],
+                  GestureDetector(
+                    onTap: () {},
+                    child: Row(
+                      children: const [
+                        Icon(
+                          Icons.arrow_forward_ios,
+                          size: 16,
+                          color: Colors.black87,
+                        ),
+                        // SvgPicture.asset(
+                        //   'assets/icons/arrow.svg',
+                        //   width: 16,
+                        //   height: 16,
+                        // )
+                      ],
+                    ),
                   ),
                 ],
               ),
             ),
+
             const SizedBox(height: 12),
 
             SizedBox(
-              height: 93,
+              height: 83,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 itemCount: 6,
                 itemBuilder: (context, index) {
                   final icons = [
-                    'assets/images/ic_home_cat1.png',
-                    'assets/images/ic_home_cat2.png',
-                    'assets/images/ic_home_cat3.png',
-                    'assets/images/ic_home_cat1.png',
-                    'assets/images/ic_home_cat2.png',
-                    'assets/images/ic_home_cat3.png',
-
+                    'assets/images/img_home_cat1.png',
+                    'assets/images/img_home_cat2.png',
+                    'assets/images/img_home_cat3.png',
+                    'assets/images/img_home_cat1.png',
+                    'assets/images/img_home_cat2.png',
+                    'assets/images/img_home_cat3.png',
                   ];
 
+                  final bool isSelected = index == 1;
+
                   return Container(
-                    width: 73,
-                    margin: const EdgeInsets.only(right: 16),
+                    width: 93,
+                    margin: const EdgeInsets.only(right: 12),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(20),
+                      border: isSelected
+                          ? Border.all(color: const Color(0xFFFEC54B), width: 2)
+                          : null,
                     ),
                     child: Center(
                       child: SizedBox(
-                        width: 40,
-                        height: 40,
+                        width: 44,
+                        height: 44,
                         child: Image.asset(
                           icons[index % icons.length],
                           fit: BoxFit.contain,
@@ -150,7 +211,8 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
 
-            SizedBox(height: 24),
+            const SizedBox(height: 24),
+
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Row(
@@ -160,20 +222,24 @@ class HomeScreen extends StatelessWidget {
                     'Trending Deals',
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
-                  Row(
-                    children: [
-                      const Text(
-                        'See All',
-                        style: TextStyle(fontSize: 14, color: Color(0xFFFEC54B)),
-                      ),
-                      const SizedBox(width: 4),
-                      const Icon(Icons.arrow_forward_ios, size: 14, color: Color(0xFFFEC54B)),
-                    ],
+                  GestureDetector(
+                    onTap: () {},
+                    child: Row(
+                      children: const [
+                        Icon(
+                          Icons.arrow_forward_ios,
+                          size: 16,
+                          color: Colors.black87,
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
             ),
+
             const SizedBox(height: 12),
+
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: GridView.builder(
@@ -181,41 +247,72 @@ class HomeScreen extends StatelessWidget {
                 physics: const NeverScrollableScrollPhysics(),
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
-                  crossAxisSpacing: 16,
-                  mainAxisSpacing: 16,
-                  childAspectRatio: 199 / 150,
+                  crossAxisSpacing: 12,
+                  mainAxisSpacing: 12,
+                  childAspectRatio: 0.82,
                 ),
                 itemCount: 4,
                 itemBuilder: (context, index) {
-                  final items = ['Avocado', 'Broccoli', 'Tomatoes', 'Grapes'];
+                  final items = ['Avocado', 'Brocoli', 'Tomatoes', 'Grapes'];
                   final prices = ['\$6.7', '\$8.7', '\$4.9', '\$7.2'];
-                  return Container(
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                  final images = [
+                    'assets/images/img_tomatos.png',
+                    'assets/images/img_brocoli.png',
+                    'assets/images/img_avocado.png',
+                    'assets/images/img_grapes.png',
+                  ];
+                  final isFav = index == 0;
+
+                  return ClipRRect(
+                    borderRadius: BorderRadius.circular(16),
+                    child: Stack(
+                      fit: StackFit.expand,
                       children: [
-                        ClipRRect(
-                          borderRadius: const BorderRadius.vertical(top: Radius.circular(10)),
-                          child: Container(
-                            height: 100,
-                            width: double.infinity,
-                            color: Colors.grey[200],
-                            child: const Center(
-                              child: Icon(Icons.fastfood, size: 40, color: Colors.grey),
+                        Image.asset(images[index], fit: BoxFit.cover),
+
+                        Container(
+                          decoration: const BoxDecoration(
+                            gradient: LinearGradient(
+                              begin: Alignment.topCenter,
+                              end: Alignment.bottomCenter,
+                              colors: [Colors.transparent, Colors.black87],
                             ),
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.all(8.0),
+
+                        Positioned(
+                          top: 10,
+                          left: 10,
+                          child: Icon(
+                            isFav ? Icons.favorite : Icons.favorite_border,
+                            size: 24,
+                            color: isFav ? Colors.red : Colors.grey,
+                          ),
+                        ),
+
+                        Positioned(
+                          bottom: 12,
+                          left: 12,
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(items[index], style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
-                              const SizedBox(height: 4),
-                              Text(prices[index], style: const TextStyle(fontSize: 14, color: Color(0xFFFEC54B), fontWeight: FontWeight.bold)),
+                              Text(
+                                items[index],
+                                style: const TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                              const SizedBox(height: 2),
+                              Text(
+                                prices[index],
+                                style: const TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
                             ],
                           ),
                         ),
@@ -225,26 +322,35 @@ class HomeScreen extends StatelessWidget {
                 },
               ),
             ),
-            const SizedBox(height: 16),
-            // Load More Button
+
+            const SizedBox(height: 20),
+
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16),
               child: SizedBox(
                 width: double.infinity,
-                child: OutlinedButton(
+                child: ElevatedButton(
                   onPressed: () {},
-                  style: OutlinedButton.styleFrom(
-                    side: const BorderSide(color: Color(0xFFFEC54B)),
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-                    padding: const EdgeInsets.symmetric(vertical: 12),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.black,
+                    foregroundColor: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                    padding: const EdgeInsets.symmetric(vertical: 16),
                   ),
                   child: const Text(
-                    'LOAD MORE',
-                    style: TextStyle(color: Color(0xFFFEC54B), fontWeight: FontWeight.bold),
+                    'More',
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600,
+                      letterSpacing: 0.5,
+                    ),
                   ),
                 ),
               ),
             ),
+
             const SizedBox(height: 32),
           ],
         ),

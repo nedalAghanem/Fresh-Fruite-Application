@@ -47,7 +47,7 @@ class HomeScreen extends StatelessWidget {
                           icon: SvgPicture.asset(
                             'assets/images/ic_notification.svg',
                             width: 24,
-                            height: 24,
+                            height:              24,
                             colorFilter: const ColorFilter.mode(
                               Colors.black87,
                               BlendMode.srcIn,
@@ -283,18 +283,10 @@ class HomeScreen extends StatelessWidget {
                         Positioned(
                           top: 10,
                           left: 10,
-                          child: Container(
-                            width: 32,
-                            height: 32,
-                            decoration: const BoxDecoration(
-                              color: Colors.white,
-                              shape: BoxShape.circle,
-                            ),
-                            child: Icon(
-                              isFav ? Icons.favorite : Icons.favorite_border,
-                              size: 16,
-                              color: isFav ? Colors.red : Colors.white,
-                            ),
+                          child: Icon(
+                            isFav ? Icons.favorite : Icons.favorite_border,
+                            size: 24,
+                            color: isFav ? Colors.red : Colors.grey,
                           ),
                         ),
 

@@ -81,9 +81,11 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
 
   Widget _buildHeader() {
     return Container(
+      height: 100,
       color: Colors.white,
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 50),
+      padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           GestureDetector(
             onTap: () => Navigator.maybePop(context),
@@ -94,13 +96,14 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
             ),
           ),
           const Expanded(
-            child: Text(
-              'Categories',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.w700,
-                color: Colors.black87,
+            child: Center(
+              child: Text(
+                'Categories',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w700,
+                  color: Colors.black87,
+                ),
               ),
             ),
           ),
@@ -115,7 +118,7 @@ class _CategoriesScreenState extends State<CategoriesScreen> {
     return Container(
       color: const Color(0xFFF0F0F0),
       child: GridView.builder(
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.all(25),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
           crossAxisSpacing: 30,
